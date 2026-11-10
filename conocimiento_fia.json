@@ -1,0 +1,74 @@
+
+{
+  "institucion": "Facultad de Ingeniería y Arquitectura de la Universidad de San Martín de Porres",
+  "semestre": "2026-II",
+  "descripcion": "Información académica de referencia incorporada al prototipo. No constituye una consulta en tiempo real.",
+  "procedimientos": {
+    "matricula_especial": {
+      "nombre": "Matrícula especial",
+      "casos_documentados": [
+        "El estudiante no puede registrar una asignatura.",
+        "Una asignatura no aparece en el sistema SAP."
+      ],
+      "orientacion": "En las situaciones contempladas por la directiva, el estudiante debe acudir a Consejería de Matrícula y presentar la ficha de autorización de matrícula especial.",
+      "situaciones_excepcionales": "La directiva contempla excepciones para determinados estudiantes próximos a egresar, sujetas a autorización.",
+      "fecha_limite": null,
+      "costo": null,
+      "observaciones": [
+        "Un curso bloqueado no implica automáticamente que corresponda una matrícula especial.",
+        "No se puede garantizar que una solicitud sea aprobada.",
+        "No se dispone de una fecha límite ni de un costo confirmado en este resumen."
+      ],
+      "fuentes": [
+        "directiva_matricula"
+      ]
+    },
+    "rectificacion_matricula": {
+      "nombre": "Rectificación de matrícula",
+      "descripcion": "Procedimiento para solicitar modificaciones a la matrícula registrada, sujeto a las condiciones correspondientes.",
+      "procedimiento": "Durante la matrícula regular puede realizarse la rectificación desde el portal académico. Posteriormente se aplican las condiciones establecidas en el calendario.",
+      "fecha_cierre_publicada": "07/08/2026",
+      "costo_publicado_soles": 75,
+      "sede_lima": "Se utiliza el formato correspondiente, con intervención de Consejería y Registros Académicos.",
+      "observaciones": [
+        "La aprobación de una solicitud no está garantizada.",
+        "Las fechas y los costos corresponden únicamente a 2026-II."
+      ],
+      "fuentes": [
+        "calendario_actividades",
+        "directiva_matricula"
+      ]
+    },
+    "retiro_asignaturas": {
+      "nombre": "Retiro de asignaturas",
+      "descripcion": "Procedimiento mediante el cual un estudiante matriculado puede solicitar el retiro de una asignatura dentro del plazo establecido.",
+      "fecha_cierre_publicada": "12/11/2026",
+      "costo_publicado_soles": 10,
+      "efecto_sobre_pension": "El retiro de asignaturas no disminuye la pensión.",
+      "sede_lima": "Se utiliza el formato oficial y la mesa de partes virtual FIA, sujeto a verificación por las áreas correspondientes.",
+      "observaciones": [
+        "No debe confundirse el retiro de asignaturas con el retiro de ciclo.",
+        "No se garantiza la aprobación de solicitudes fuera de plazo.",
+        "No se dispone en este resumen de información suficiente para afirmar consecuencias específicas sobre notas, créditos o promedio."
+      ],
+      "fuentes": [
+        "calendario_actividades",
+        "directiva_matricula"
+      ]
+    }
+  },
+  "fuentes_oficiales": {
+    "documentos_alumnos_regulares": {
+      "nombre": "Documentos para alumnos regulares",
+      "url": "https://fia.usmp.edu.pe/calendario-alumnos-regulares/"
+    },
+    "calendario_actividades": {
+      "nombre": "Calendario de Actividades 2026-II",
+      "url": "https://fia.usmp.edu.pe/wp-content/uploads/2026/07/CALENDARIO_DE_ACTIVIDADES_2026-II_edicion_02.pdf"
+    },
+    "directiva_matricula": {
+      "nombre": "Directiva de Matrícula 2026-II",
+      "url": "https://fia.usmp.edu.pe/wp-content/uploads/2026/07/DIRECTIVAS_DE_MATRICULA_2026-II_EDICION_1.pdf"
+    }
+  }
+}

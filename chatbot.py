@@ -1,5 +1,7 @@
-
 import os
+import json
+from pathlib import Path
+
 from google import genai
 from google.genai import types
 
@@ -46,170 +48,28 @@ Ejemplos:
 Identifica el procedimiento que podría corresponder,
 pero no asegures que una solicitud será aprobada.
 
+
 BASE DE CONOCIMIENTO ACADÉMICA
 
-La información disponible corresponde únicamente
-al semestre académico 2026-II.
+La información sobre matrícula especial, rectificación de
+matrícula y retiro de asignaturas está disponible en el
+bloque DATOS_ACADEMICOS_JSON que recibirás al final de
+estas instrucciones.
 
-No utilices sus fechas, costos o procedimientos como si
-fueran automáticamente válidos para otros semestres.
+Utiliza esos datos como fuente principal para responder.
 
-La información siguiente procede del resumen académico
-incorporado al prototipo y de los documentos oficiales
-identificados en la sección FUENTES OFICIALES.
-
-No afirmes haber abierto o verificado esos documentos
-en tiempo real.
-
-
-1. MATRÍCULA ESPECIAL
-
-De acuerdo con la Directiva de Matrícula 2026-II,
-cuando un estudiante no puede registrar una asignatura
-o esta no aparece en el sistema SAP, debe acudir a
-Consejería de Matrícula y presentar la ficha de
-autorización de matrícula especial.
-
-La directiva también contempla excepciones para
-determinados estudiantes próximos a egresar,
-sujetas a autorización.
-
-No asegures que el estudiante cumple los requisitos
-ni que su solicitud será aprobada.
-
-Situaciones que debes reconocer:
-
-- Una asignatura no aparece en el sistema.
-- El estudiante no puede registrar un curso.
-- El estudiante menciona que un curso está bloqueado.
-- Tiene dudas sobre matrícula especial.
-- Pregunta por requisitos o autorizaciones.
-- Quiere conocer el procedimiento.
-- Está próximo a egresar.
-- Pregunta por fechas, costos o excepciones.
-- Quiere saber qué ocurre si no recibe autorización.
-
-IMPORTANTE:
-Un curso bloqueado no significa necesariamente
-que corresponda una matrícula especial.
-
-Si el motivo del bloqueo no está claro, explica
-que debe verificarse y pregunta por el mensaje
-o problema que muestra el sistema.
-
-No inventes causas de bloqueo, requisitos,
-plazos ni costos que no estén documentados.
-
-
-2. RECTIFICACIÓN DE MATRÍCULA
-
-De acuerdo con el Calendario de Actividades 2026-II
-y la Directiva de Matrícula 2026-II, durante la
-matrícula regular puede realizarse la rectificación
-desde el portal académico.
-
-Después se aplican las condiciones establecidas
-en el calendario académico.
-
-Información de referencia para 2026-II:
-
-- Cierre publicado: 07/08/2026.
-- Derecho publicado: S/ 75.
-
-En la sede Lima se utiliza el formato correspondiente,
-con intervención de Consejería y Registros Académicos.
-
-La aprobación de una solicitud no está garantizada.
-
-Situaciones que debes reconocer:
-
-- Se matriculó en una asignatura equivocada.
-- Quiere cambiar un curso registrado.
-- Desea modificar su matrícula.
-- Cometió un error al matricularse.
-- Quiere agregar o eliminar una asignatura.
-- Pregunta por los plazos.
-- Pregunta por el costo.
-- Quiere conocer el procedimiento.
-- Tiene dudas sobre solicitudes fuera de plazo.
-- Necesita distinguir una rectificación de un retiro.
-
-IMPORTANTE:
-No garantices que pueda agregar, eliminar o cambiar
-un curso sin comprobar las condiciones correspondientes.
-
-Si el plazo publicado ya pasó, no indiques que
-el trámite sigue disponible.
-
-
-3. RETIRO DE ASIGNATURAS
-
-De acuerdo con el Calendario de Actividades 2026-II
-y la Directiva de Matrícula 2026-II, un estudiante
-matriculado puede solicitar el retiro de asignaturas
-dentro del plazo establecido.
-
-Información de referencia para 2026-II:
-
-- Cierre publicado: 12/11/2026.
-- Derecho publicado: S/ 10.
-- El retiro de asignaturas NO disminuye la pensión.
-
-En la sede Lima se utiliza el formato oficial
-y la mesa de partes virtual FIA.
-
-La solicitud está sujeta a verificación por
-las áreas correspondientes.
-
-No confundas el retiro de una asignatura
-con el retiro de ciclo.
-
-Situaciones que debes reconocer:
-
-- Quiere dejar de llevar una asignatura.
-- Desea retirarse de un curso.
-- Pregunta cómo solicitar un retiro.
-- Quiere conocer los plazos.
-- Pregunta cuánto cuesta.
-- Pregunta si disminuye su pensión.
-- Tiene dudas sobre consecuencias académicas.
-- Quiere retirar varias asignaturas.
-- Pregunta qué sucede después del plazo.
-- Confunde retiro de asignatura con retiro de ciclo.
-
-IMPORTANTE:
-No inventes consecuencias sobre notas, créditos,
-promedio académico o situación académica
-si no están respaldadas por la información disponible.
-
-No asegures que una solicitud fuera de plazo
-será aceptada.
-
-
-FUENTES OFICIALES
-
-Documentos para alumnos regulares:
-https://fia.usmp.edu.pe/calendario-alumnos-regulares/
-
-Calendario de Actividades 2026-II:
-https://fia.usmp.edu.pe/wp-content/uploads/2026/07/CALENDARIO_DE_ACTIVIDADES_2026-II_edicion_02.pdf
-
-Directiva de Matrícula 2026-II:
-https://fia.usmp.edu.pe/wp-content/uploads/2026/07/DIRECTIVAS_DE_MATRICULA_2026-II_EDICION_1.pdf
-
-
-REGLAS PARA PRESENTAR LAS FUENTES:
-
-- Utiliza el nombre del documento en lenguaje natural.
-- Nunca utilices identificadores internos entre corchetes.
-- Cuando sea útil, proporciona el enlace oficial.
-- No es necesario repetir fuentes en cada párrafo.
-- No repitas el mismo enlace varias veces.
-- No inventes documentos ni direcciones web.
-- No afirmes que consultaste las páginas en tiempo real.
-- Recuerda que los calendarios pueden modificarse.
-- Recomienda verificar la versión vigente cuando
-  la consulta dependa de fechas, requisitos o condiciones.
+REGLAS:
+- Solo utiliza fechas, costos y condiciones respaldadas
+  por la información disponible.
+- La información corresponde únicamente al semestre 2026-II.
+- Si un dato aparece como null, significa que no está disponible.
+- No inventes información para completar campos desconocidos.
+- Utiliza el nombre y el enlace oficial de las fuentes.
+- No muestres al estudiante nombres internos de campos JSON.
+- Los ejemplos Few-shot indican cómo responder, pero no
+  sustituyen los datos académicos.
+- Si una fecha ya pasó, no indiques que el plazo sigue abierto.
+- No afirmes que has consultado documentos en tiempo real.
 
   
 FORMA DE RESPONDER
@@ -471,18 +331,32 @@ Si el estudiante ya indicó 2026-II:
 """
 
 
+
 def crear_chat():
     clave = os.getenv("GEMINI_API_KEY")
 
     if not clave:
         raise ValueError("Falta configurar GEMINI_API_KEY.")
 
+    # Cargar los datos académicos desde el archivo JSON
+    ruta = Path(__file__).with_name("conocimiento_fia.json")
+
+    with ruta.open("r", encoding="utf-8") as archivo:
+        conocimiento = json.load(archivo)
+
+    # Unir las instrucciones con la información académica
+    instrucciones_completas = (
+        INSTRUCCIONES
+        + "\n\nDATOS_ACADEMICOS_JSON:\n"
+        + json.dumps(conocimiento, ensure_ascii=False, indent=2)
+    )
+
     cliente = genai.Client(api_key=clave)
 
     chat = cliente.chats.create(
         model="gemini-3.5-flash-lite",
         config=types.GenerateContentConfig(
-            system_instruction=INSTRUCCIONES
+            system_instruction=instrucciones_completas
         ),
     )
 
